@@ -15,7 +15,7 @@
   <section class="grid grid-cols-1 lg:grid-cols-12 gap-16">
     <div class="col-span-1 lg:col-span-8">
       {{#items.0.content_html}}
-      <div class="main-text">{{{items.0.content_html}}}</div>
+      <div class="main-text pb-[150px]" data-item-description>{{{items.0.content_html}}}</div>
       {{/items.0.content_html}}
     </div>
 
@@ -24,3 +24,20 @@
     </div>
   </section>
 </main>
+
+<dialog id="image-preview" class="image-preview" aria-label="Image preview">
+  <div class="image-preview__toolbar">
+    <button type="button" data-image-download>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      <span>Download</span>
+    </button>
+    <button type="button" data-image-close aria-label="Close image preview" autofocus>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M6 18 18 6"/></svg>
+    </button>
+  </div>
+  <div class="image-preview__canvas"><img data-image-full alt=""></div>
+  <div class="image-preview__status" aria-live="polite">
+    <span data-image-status></span>
+    <a data-image-original target="_blank" rel="noopener noreferrer" hidden>Open full image</a>
+  </div>
+</dialog>

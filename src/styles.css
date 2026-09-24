@@ -121,6 +121,53 @@
   main .grid > div { min-width: 0; }
   .icon-arrow-left::before { content: "←"; }
   .icon-arrow-right::before { content: "→"; }
+
+  [data-image-preview] { cursor: zoom-in; }
+  [data-image-preview]:hover { opacity: 1; }
+  html.image-preview-open { overflow: hidden; }
+  .image-preview {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100dvh;
+    max-width: none;
+    max-height: none;
+    margin: 0;
+    padding: 1rem;
+    padding-top: max(1rem, env(safe-area-inset-top));
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    border: 0;
+    background: #09090bf5;
+    color: white;
+    overscroll-behavior: contain;
+  }
+  .image-preview[open] { display: flex; flex-direction: column; gap: 1rem; }
+  .image-preview::backdrop { background: #0009; backdrop-filter: blur(4px); }
+  .image-preview__toolbar { display: flex; justify-content: flex-end; gap: .75rem; flex-shrink: 0; }
+  .image-preview__toolbar button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    min-width: 44px;
+    min-height: 44px;
+    padding: .5rem .75rem;
+    border: 1px solid #ffffff40;
+    border-radius: .5rem;
+    background: #ffffff14;
+    cursor: pointer;
+  }
+  .image-preview__toolbar button:hover { background: #ffffff26; }
+  .image-preview__toolbar button:disabled { opacity: .5; cursor: wait; }
+  .image-preview button:focus-visible, .image-preview a:focus-visible {
+    outline: 2px solid white;
+    outline-offset: 3px;
+  }
+  .image-preview__canvas { display: grid; place-items: center; flex: 1; min-height: 0; }
+  .image-preview__canvas img { width: 100%; height: 100%; min-height: 0; object-fit: contain; }
+  .image-preview__status { flex-shrink: 0; text-align: center; font-size: .875rem; }
+  .image-preview__status:has([data-image-status]:empty) { display: none; }
+  .image-preview__status a { color: white; text-decoration: underline; }
 }
 
 /* Keep controls at full height while long search results use the remaining space. */

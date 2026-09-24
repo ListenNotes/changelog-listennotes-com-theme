@@ -65,6 +65,13 @@ The night-mode button beside search follows the system color scheme initially
 and remembers a visitor's explicit choice in local storage. Sandboxed previews
 block storage, so their toggle works for the current page but resets on reload.
 
+Item-description images open in a full-screen preview with Download and Close
+controls. Escape closes the preview and returns focus to the image link. Direct
+downloads require the image host to allow cross-origin requests; otherwise the
+preview offers an Open full image link for saving through the browser. The
+standard theme-kit preview sandbox disables downloads. Description content has
+150px of bottom padding before the next section or footer.
+
 Read [THEME.md](./THEME.md), `microfeed-theme.json`, and the schemas under
 `.microfeed/schemas/` before editing. Establish a clean validation and test
 baseline before committing.
