@@ -9,7 +9,7 @@
   "packageId": "listennotes.dispatch",
   "repository": "https://github.com/ListenNotes/changelog-listennotes-com-theme",
   "homepage": "https://changelog.listennotes.com/",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "files": {
     "rssStylesheet": "rss-stylesheet.xsl",
     "webBodyEnd": "web-body-end.mustache",

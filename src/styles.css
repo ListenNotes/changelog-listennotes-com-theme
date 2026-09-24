@@ -123,6 +123,18 @@
   .icon-arrow-right::before { content: "→"; }
 }
 
+/* Keep controls at full height while long search results use the remaining space. */
+.mf-public-search .mf-public-search__header,
+.mf-public-search .mf-public-search-preview-note,
+.mf-public-search .mf-public-search__input-row {
+  flex-shrink: 0;
+}
+
+.mf-public-search .mf-public-search__results {
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
 /* Keep white button text readable when search links use the lighter night color. */
 :root[data-theme="dark"] .mf-public-search__input-row button[type="submit"] {
   background: var(--color-brand-500);
