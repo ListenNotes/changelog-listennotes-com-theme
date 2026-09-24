@@ -1,0 +1,133 @@
+<main class="mt-16 px-4 md:px-8">
+  <section>
+    <h1 class="pb-4 border-b text-xl font-semibold">
+      What’s New at Listen Notes?
+    </h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-4 mt-8">
+    <div class="col-span-1 lg:col-span-8"> 
+      {{^items.length}}
+      No items.
+      {{/items.length}}
+
+      {{#items}}
+        <div class="mb-8">
+        <a href="{{_microfeed.web_url}}" class="mb-1 text-brand-500 break-all">
+          {{title}}
+          <span class="icon-arrow-right"></span>
+        </a>
+        
+        <div>
+        <time class="text-sm text-gray-500 mt-8">
+          {{_microfeed.date_published_short}}
+
+          {{#_microfeed.duration_hhmmss}}
+          &middot;
+          <i>{{_microfeed.duration_hhmmss}}</i>
+          {{/_microfeed.duration_hhmmss}}
+        </time>            
+        </div>
+        </div>
+      {{/items}}
+      
+
+<div class="flex flex-1 justify-between sm:justify-center">
+{{#_microfeed.items_prev_cursor}}
+    <a href="?prev_cursor={{_microfeed.items_prev_cursor}}&sort={{_microfeed.items_sort_order}}" class="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">Previous</a>
+{{/_microfeed.items_prev_cursor}}   
+
+{{#_microfeed.items_next_cursor}} 
+    <a href="?next_cursor={{_microfeed.items_next_cursor}}&sort={{_microfeed.items_sort_order}}" class="relative ml-3 inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0">Next</a>
+{{/_microfeed.items_next_cursor}}
+</div>
+      
+
+    </div>
+    
+      <div class="col-span-1 lg:col-span-4">  
+        <ul role="list" class="space-y-3">
+          <li>
+          <a href="https://www.listennotes.com/" target="_blank">
+<div class="flex overflow-hidden bg-white px-4 py-4 shadow sm:rounded-md sm:px-6">
+  <div class="mr-4 flex-shrink-0">
+    <img class="h-16 w-16 rounded-lg" aria-hidden="true"
+         src="https://changelog-cdn.listennotes.com/changelog-listennotes-com/production/media/image-0d8655dd224a47855d647f60baa1df4a.png"
+    />
+  </div>
+  <div>
+    <h4 class="text-lg font-bold text-black">Listen Notes</h4>
+    <p class="mt-1 text-gray-500">The best podcast search engine</p>
+  </div>
+</div>
+</a>
+          </li>    
+          
+          <li>
+          <a href="https://www.podcastapi.com/" target="_blank">
+<div class="flex overflow-hidden bg-white px-4 py-4 shadow sm:rounded-md sm:px-6">
+  <div class="mr-4 flex-shrink-0">
+    <img class="h-16 w-16 rounded-lg" aria-hidden="true"
+         src="https://changelog-cdn.listennotes.com/changelog-listennotes-com/production/media/image-cec2c23834ce3e7f9333bc4fcb8771d2.png"
+    />
+  </div>
+  <div>
+    <h4 class="text-lg font-bold text-black">Podcast API</h4>
+    <p class="mt-1 text-gray-500">The Best Podcast API for Search, Directory, and Insights</p>
+  </div>
+</div>
+</a>
+          </li>
+          
+          <li>
+          <a href="https://www.curatekit.com/" target="_blank">
+<div class="flex overflow-hidden bg-white px-4 py-4 shadow sm:rounded-md sm:px-6">
+  <div class="mr-4 flex-shrink-0">
+    <img class="h-16 w-16 rounded-lg"  aria-hidden="true"
+         src="https://changelog-cdn.listennotes.com/changelog-listennotes-com/production/media/rich-editor/items/Ar_-xHVLBaq/image-b96ac05ccc6753befeda4dc3f5c9eb4d.png"
+    />
+  </div>
+  <div>
+    <h4 class="text-lg font-bold text-black">CurateKit</h4>
+    <p class="mt-1 text-gray-500">The easiest way to curate and publish digital content</p>
+  </div>
+</div>
+</a>
+          </li> 
+                    
+          <li>
+          <a href="https://www.listen411.com/" target="_blank">
+<div class="flex overflow-hidden bg-white px-4 py-4 shadow sm:rounded-md sm:px-6">
+  <div class="mr-4 flex-shrink-0">
+    <img class="h-16 w-16 rounded-lg"  aria-hidden="true"
+         src="https://changelog-cdn.listennotes.com/changelog-listennotes-com/production/media/image-cf8b89be4d45fa3d7dc92f6d79919d91.png"
+    />
+  </div>
+  <div>
+    <h4 class="text-lg font-bold text-black">Listen411</h4>
+    <p class="mt-1 text-gray-500">Lightning fast and affordable Podcast Transcription and Summarization</p>
+  </div>
+</div>
+</a>
+          </li> 
+          
+          
+          <li>
+          <a href="https://www.microfeed.org/" target="_blank">
+<div class="flex overflow-hidden bg-white px-4 py-4 shadow sm:rounded-md sm:px-6">
+  <div class="mr-4 flex-shrink-0">
+    <img class="h-16 w-16 rounded-lg"  aria-hidden="true"
+         src="https://changelog-cdn.listennotes.com/changelog-listennotes-com/production/media/image-cb3ebc5fd4866702b1f5110013b96547.png"
+    />
+  </div>
+  <div>
+    <h4 class="text-lg font-bold text-black">microfeed</h4>
+    <p class="mt-1 text-gray-500">A lightweight cms self-hosted on Cloudflare. Open Source. Serverless.</p>
+  </div>
+</div>
+</a>
+          </li>                                                             
+        </ul>
+      </div>    
+    </div>
+  </section>
+</main>

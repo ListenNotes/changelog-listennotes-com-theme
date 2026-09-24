@@ -1,0 +1,20 @@
+{
+  "$schema": "./.microfeed/schemas/manifest.schema.json",
+  "assets": [],
+  "author": "Site owner",
+  "description": "Automatically migrated from the previous custom theme “custom”.",
+  "license": "Unspecified",
+  "microfeed": "*",
+  "name": "Imported site theme (custom)",
+  "packageId": "local.legacy-theme",
+  "version": "1.0.2",
+  "files": {
+    "rssStylesheet": "rss-stylesheet.xsl",
+    "webBodyEnd": "web-body-end.mustache",
+    "webBodyStart": "web-body-start.mustache",
+    "webFeed": "web-feed.mustache",
+    "webHeader": "web-header.mustache",
+    "webItem": "web-item.mustache"
+  },
+  "formatVersion": 1
+}
