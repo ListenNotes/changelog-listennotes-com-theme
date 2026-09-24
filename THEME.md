@@ -1,8 +1,10 @@
 # microfeed theme
 
 This directory is a complete, versioned microfeed theme package. Coding agents
-should edit only the paths declared in `microfeed-theme.json`, declared
-assets, and optional fixtures. Do not edit files under `.microfeed/schemas/`.
+should edit the paths declared in `microfeed-theme.json`, declared assets,
+fixtures, and the build sources under `src/` and `scripts/`. Do not edit files
+under `.microfeed/schemas/` or the generated `web-header.mustache`,
+`web-feed.mustache`, and `web-item.mustache`.
 The bundled `develop-microfeed-theme` skill gives coding agents the same safe
 workflow. Its [public-site reference](./.agents/skills/develop-microfeed-theme/references/public-site.md)
 documents Pages, shared navigation, the search popup, the Search page, stable
@@ -20,12 +22,20 @@ people, coding agents, and CI.
 ## Edit and test loop
 
 1. Read `microfeed-theme.json` and `.microfeed/schemas/theme-context.schema.json`.
-2. Edit the eight declared Mustache/XSL files. Mustache is logicless:
-   variables, sections, inverted sections, and iteration only.
-3. Run `yarn validate`.
+2. Edit the non-generated Mustache/XSL files or the build sources in `src/`.
+   The feed and item layouts share `src/partials/project-list.mustache`;
+   update project cards there once, then rebuild both pages.
+   This theme uses format v2 with eight
+   slots. Mustache supports variables, sections, inverted sections, and
+   iteration only.
+3. Run `yarn build`, then `yarn validate`. The build generates the installed
+   header with compiled Tailwind CSS and the feed/item templates with their
+   shared project list; include those outputs with source changes.
 4. Run `yarn test`.
-5. Run `yarn preview` and inspect feed, item, Page, Search, RSS, mobile, and
-   desktop views.
+5. Run `yarn preview` and inspect feed, item, Page (including 404), Search, RSS,
+   mobile, and desktop views. Verify the search icon and Command/Ctrl+K open
+   the platform dialog, and that typing filters its preview results.
+   Restart preview after changes; it reads the package only at startup.
 6. Increment the immutable semantic version before installation.
 
 The render context is the public JSON Feed plus `current_year`,
@@ -34,8 +44,10 @@ It also supplies the current `page`, ordered `navigation_pages`, and Search
 page state when relevant; the generated context schema documents every field.
 On item pages, use `items.0`; the old `item` alias is deprecated.
 
-Keep shared navigation in Body start when it should render once across Feed,
-Item, Page, and Search. Keep a shared footer and progressive enhancements in
+This changelog theme intentionally omits the `navigation_pages` list from its
+shared header. Do not add Page navigation to feed or item pages. The Page
+template remains only for format v2 compatibility and direct Page/404 rendering.
+Keep a shared footer and progressive enhancements in
 Body end. microfeed injects and controls the public search dialog; themes add
 visible `data-microfeed-search-open` triggers, provide the documented Search
 page hooks, and style the interface without duplicating its Ajax or keyboard

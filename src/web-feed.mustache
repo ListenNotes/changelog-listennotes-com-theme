@@ -1,0 +1,52 @@
+<main class="mt-16 px-4 md:px-8">
+  <section>
+    <h1 class="pb-4 border-b text-xl font-semibold">
+      What’s New at Listen Notes?
+    </h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 mb-4 mt-8">
+    <div class="col-span-1 lg:col-span-8">
+      {{^items.length}}
+      No items.
+      {{/items.length}}
+
+      {{#items}}
+        <div class="mb-8">
+        <a href="{{_microfeed.web_url}}" class="mb-1 text-site-link break-all">
+          {{title}}
+          <span class="icon-arrow-right"></span>
+        </a>
+
+        <div>
+        <time class="text-sm text-gray-500 dark:text-gray-400 mt-8">
+          {{_microfeed.date_published_short}}
+
+          {{#_microfeed.duration_hhmmss}}
+          &middot;
+          <i>{{_microfeed.duration_hhmmss}}</i>
+          {{/_microfeed.duration_hhmmss}}
+        </time>
+        </div>
+        </div>
+      {{/items}}
+
+
+<div class="flex flex-1 justify-between sm:justify-center">
+{{#_microfeed.items_prev_cursor}}
+    <a href="?prev_cursor={{_microfeed.items_prev_cursor}}&sort={{_microfeed.items_sort_order}}" class="relative inline-flex items-center rounded-md bg-white dark:bg-gray-900 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 focus-visible:outline-offset-0">Previous</a>
+{{/_microfeed.items_prev_cursor}}
+
+{{#_microfeed.items_next_cursor}}
+    <a href="?next_cursor={{_microfeed.items_next_cursor}}&sort={{_microfeed.items_sort_order}}" class="relative ml-3 inline-flex items-center rounded-md bg-white dark:bg-gray-900 px-3 py-2 text-sm font-semibold text-gray-900 dark:text-gray-100 ring-1 ring-inset ring-gray-300 dark:ring-gray-700 hover:bg-gray-50 dark:hover:bg-gray-800 focus-visible:outline-offset-0">Next</a>
+{{/_microfeed.items_next_cursor}}
+</div>
+
+
+    </div>
+
+      <div class="col-span-1 lg:col-span-4">
+        <!-- PROJECT_LIST -->
+      </div>
+    </div>
+  </section>
+</main>

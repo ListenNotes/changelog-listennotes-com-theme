@@ -1,13 +1,18 @@
 {
   "devDependencies": {
-    "@microfeed/theme-kit": "^1.0.0"
+    "@microfeed/theme-kit": "^1.0.0",
+    "@tailwindcss/cli": "4.3.3",
+    "tailwindcss": "4.3.3"
   },
-  "name": "local.legacy-theme",
+  "name": "listennotes.dispatch",
   "packageManager": "yarn@4.18.0",
   "private": true,
   "scripts": {
-    "preview": "theme-kit preview .",
-    "test": "theme-kit test . --json",
-    "validate": "theme-kit validate . --json"
+    "build:css": "tailwindcss -i src/styles.css -o .build/theme.css --minify",
+    "build": "yarn build:css && node scripts/build.mjs",
+    "check:build": "yarn build:css && node scripts/build.mjs --check",
+    "preview": "yarn build && theme-kit preview .",
+    "test": "yarn check:build && theme-kit test . --json",
+    "validate": "yarn check:build && theme-kit validate . --json"
   }
 }

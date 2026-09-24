@@ -1,20 +1,24 @@
 {
   "$schema": "./.microfeed/schemas/manifest.schema.json",
   "assets": [],
-  "author": "Site owner",
-  "description": "Automatically migrated from the previous custom theme “custom”.",
+  "author": "Listen Notes, Inc.",
+  "description": "A changelog theme with readable articles, search, night mode, and a shared project sidebar.",
   "license": "Unspecified",
   "microfeed": "*",
-  "name": "Imported site theme (custom)",
-  "packageId": "local.legacy-theme",
-  "version": "1.0.2",
+  "name": "Listen Notes Dispatch",
+  "packageId": "listennotes.dispatch",
+  "repository": "https://github.com/ListenNotes/changelog-listennotes-com-theme",
+  "homepage": "https://changelog.listennotes.com/",
+  "version": "1.1.0",
   "files": {
     "rssStylesheet": "rss-stylesheet.xsl",
     "webBodyEnd": "web-body-end.mustache",
     "webBodyStart": "web-body-start.mustache",
     "webFeed": "web-feed.mustache",
     "webHeader": "web-header.mustache",
-    "webItem": "web-item.mustache"
+    "webItem": "web-item.mustache",
+    "webPage": "web-page.mustache",
+    "webSearch": "web-search.mustache"
   },
-  "formatVersion": 1
+  "formatVersion": 2
 }
