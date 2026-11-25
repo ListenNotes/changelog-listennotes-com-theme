@@ -93,6 +93,8 @@ activate it only as a separate confirmed action.
 
 ## Install on the changelog site
 
+This theme needs a microfeed build with public tags and custom tag directory support. The Listen Notes changelog has both features in its build labeled `1.0.13`. For upstream releases, use microfeed `1.1.0` or newer.
+
 This repository is private, so install from the validated local checkout after
 committing and pushing. microfeed's GitHub installer supports public repositories
 only. From this directory:

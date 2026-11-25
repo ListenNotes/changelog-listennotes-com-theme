@@ -4,7 +4,7 @@
   "author": "Listen Notes, Inc.",
   "description": "A changelog theme with readable articles, search, night mode, and a shared project sidebar.",
   "license": "Unspecified",
-  "microfeed": ">=1.1.0",
+  "microfeed": "1.0.13 || >=1.1.0",
   "name": "Listen Notes Dispatch",
   "packageId": "listennotes.dispatch",
   "repository": "https://github.com/ListenNotes/changelog-listennotes-com-theme",
