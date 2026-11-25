@@ -4,12 +4,13 @@
   "author": "Listen Notes, Inc.",
   "description": "A changelog theme with readable articles, search, night mode, and a shared project sidebar.",
   "license": "Unspecified",
-  "microfeed": "*",
+  "microfeed": ">=1.1.0",
   "name": "Listen Notes Dispatch",
   "packageId": "listennotes.dispatch",
   "repository": "https://github.com/ListenNotes/changelog-listennotes-com-theme",
   "homepage": "https://changelog.listennotes.com/",
-  "version": "1.2.0",
+  "version": "1.3.0",
+  "previewFixture": "fixtures/custom.json",
   "files": {
     "rssStylesheet": "rss-stylesheet.xsl",
     "webBodyEnd": "web-body-end.mustache",
@@ -18,7 +19,8 @@
     "webHeader": "web-header.mustache",
     "webItem": "web-item.mustache",
     "webPage": "web-page.mustache",
-    "webSearch": "web-search.mustache"
+    "webSearch": "web-search.mustache",
+    "webTags": "web-tags.mustache"
   },
   "formatVersion": 2
 }

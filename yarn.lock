@@ -86,9 +86,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@microfeed/theme-kit@npm:^1.0.0":
-  version: 1.0.13
-  resolution: "@microfeed/theme-kit@npm:1.0.13"
+"@microfeed/theme-kit@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "@microfeed/theme-kit@npm:1.1.0"
   dependencies:
     fast-xml-validator: "npm:^1.4.1"
     mustache: "npm:^4.2.0"
@@ -98,7 +98,7 @@ __metadata:
   bin:
     microfeed-theme: dist/cli.js
     theme-kit: dist/cli.js
-  checksum: 10c0/8e21f78b1053d4d76a3dff8168da0121096abddef39753ec5bc9865c7a866357979d65be434231d01591340341fce92cdb108f1e68f5bd27e0cd2566c5279167
+  checksum: 10c0/82427117bd73ba4badde4bec343c98bc76ae7d78b1ba33b501453cedb00882fdc1b17632cf0c10fdc530a63e2926199596ca6ec64afed26e8075a5dfb17a96ef
   languageName: node
   linkType: hard
 
@@ -773,7 +773,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "listennotes.dispatch@workspace:."
   dependencies:
-    "@microfeed/theme-kit": "npm:^1.0.0"
+    "@microfeed/theme-kit": "npm:^1.1.0"
     "@tailwindcss/cli": "npm:4.3.3"
     tailwindcss: "npm:4.3.3"
   languageName: unknown

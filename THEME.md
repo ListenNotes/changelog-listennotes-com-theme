@@ -25,9 +25,9 @@ people, coding agents, and CI.
 2. Edit the non-generated Mustache/XSL files or the build sources in `src/`.
    The feed and item layouts share `src/partials/project-list.mustache`;
    update project cards there once, then rebuild both pages.
-   This theme uses format v2 with eight
-   slots. Mustache supports variables, sections, inverted sections, and
-   iteration only.
+   This theme uses format v2 and declares an optional All tags template in
+   `web-tags.mustache`. The Feed template also renders individual tag archives.
+   Mustache supports variables, sections, inverted sections, and iteration only.
 3. Run `yarn build`, then `yarn validate`. The build generates the installed
    header with compiled Tailwind CSS and the feed/item templates with their
    shared project list; include those outputs with source changes.

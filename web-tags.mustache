@@ -1,0 +1,29 @@
+<main class="mt-16 px-4 md:px-8">
+  <section class="tags-directory">
+    <a href="/" class="tag-link mb-4 inline-block text-sm">← Back to changelog</a>
+    <h1 class="border-b pb-4 text-xl font-semibold">All tags</h1>
+    {{#tags}}
+    {{#items.length}}
+    <ul class="tags-grid" role="list">
+      {{#items}}
+      <li class="tag-card">
+        <h2><a class="item-tag" rel="tag" href="{{url}}">{{name}}</a></h2>
+        {{#description}}<p>{{description}}</p>{{/description}}
+        <div class="tag-card-meta">
+          <span>{{published_item_count}} published</span>
+          {{#rss_enabled}}<a class="tag-link" href="{{rss_url}}" aria-label="RSS feed for {{name}}">RSS</a>{{/rss_enabled}}
+          {{#json_enabled}}<a class="tag-link" href="{{json_url}}" aria-label="JSON Feed for {{name}}">JSON Feed</a>{{/json_enabled}}
+        </div>
+      </li>
+      {{/items}}
+    </ul>
+    {{/items.length}}
+    {{^items.length}}<p class="mt-6">No tags yet.</p>{{/items.length}}
+    {{#next_url}}
+    <nav aria-label="Tag pagination">
+      <a href="{{next_url}}" class="tag-link text-sm">More tags →</a>
+    </nav>
+    {{/next_url}}
+    {{/tags}}
+  </section>
+</main>

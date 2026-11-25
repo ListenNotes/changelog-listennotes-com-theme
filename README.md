@@ -32,7 +32,7 @@ The night-mode toggle lives in `src/theme.js` and is embedded in the generated
 header before styles load, so the selected color scheme applies immediately.
 
 Edit **`src/partials/project-list.mustache`** to update the project sidebar.
-This is the single shared list for feed and item pages, including CurateKit.
+This is the single shared list for feed and item pages.
 The build inserts it at each layout's `<!-- PROJECT_LIST -->` marker before
 installation; microfeed does not need runtime partial support.
 

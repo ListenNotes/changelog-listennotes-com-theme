@@ -11,7 +11,26 @@
       "content_text": "Edit or remove this fixture.",
       "date_published": "2026-08-13T10:00:00.000Z",
       "_microfeed": {
-        "web_url": "https://example.test/i/package-fixture/"
+        "web_url": "https://example.test/i/package-fixture/",
+        "tags": [
+          {
+            "id": "product-updates",
+            "name": "Product updates",
+            "slug": "product-updates",
+            "url": "https://example.test/tags/product-updates/",
+            "json_url": "https://example.test/tags/product-updates/json/",
+            "rss_url": "https://example.test/tags/product-updates/rss/"
+          },
+          {
+            "id": "podcast-api",
+            "name": "Podcast API",
+            "slug": "podcast-api",
+            "url": "https://example.test/tags/podcast-api/",
+            "json_url": "https://example.test/tags/podcast-api/json/",
+            "rss_url": "https://example.test/tags/podcast-api/rss/"
+          }
+        ],
+        "date_published_short": "Thu Aug 13 2026"
       }
     },
     {
@@ -20,8 +39,47 @@
       "content_text": "Use this longer description to verify excerpts, wrapping, and matched-text highlighting.",
       "date_published": "2026-08-12T09:00:00.000Z",
       "_microfeed": {
-        "web_url": "https://example.test/i/searchable-fixture/"
+        "web_url": "https://example.test/i/searchable-fixture/",
+        "date_published_short": "Wed Aug 12 2026"
       }
     }
-  ]
+  ],
+  "tags": {
+    "title": "Tags",
+    "url": "https://example.test/tags/",
+    "rss_enabled": true,
+    "json_enabled": true,
+    "items": [
+      {
+        "id": "integrations",
+        "name": "Integrations",
+        "slug": "integrations",
+        "url": "https://example.test/tags/integrations/",
+        "json_url": "https://example.test/tags/integrations/json/",
+        "rss_url": "https://example.test/tags/integrations/rss/",
+        "description": "",
+        "published_item_count": 0
+      },
+      {
+        "id": "podcast-api",
+        "name": "Podcast API",
+        "slug": "podcast-api",
+        "url": "https://example.test/tags/podcast-api/",
+        "json_url": "https://example.test/tags/podcast-api/json/",
+        "rss_url": "https://example.test/tags/podcast-api/rss/",
+        "description": "New capabilities and changes for Podcast API developers.",
+        "published_item_count": 1
+      },
+      {
+        "id": "product-updates",
+        "name": "Product updates",
+        "slug": "product-updates",
+        "url": "https://example.test/tags/product-updates/",
+        "json_url": "https://example.test/tags/product-updates/json/",
+        "rss_url": "https://example.test/tags/product-updates/rss/",
+        "description": "New features, improvements, and fixes across Listen Notes.",
+        "published_item_count": 1
+      }
+    ]
+  }
 }

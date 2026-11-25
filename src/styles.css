@@ -6,6 +6,7 @@
 @source "./**/*.mustache";
 @source "../web-page.mustache";
 @source "../web-search.mustache";
+@source "../web-tags.mustache";
 
 @theme {
   --color-brand-200: hsla(16, 39%, 79%, .4);
@@ -28,6 +29,7 @@
     --mf-muted: var(--color-gray-600);
     --mf-border: var(--color-gray-300);
     --theme-divider: var(--color-gray-200);
+    --theme-tag-color: #455e7d;
   }
 
   :root[data-theme="dark"] {
@@ -39,6 +41,7 @@
     --mf-muted: var(--color-gray-400);
     --mf-border: var(--color-gray-700);
     --theme-divider: var(--color-gray-800);
+    --theme-tag-color: #a9bfda;
   }
 
   html {
@@ -121,6 +124,54 @@
   main .grid > div { min-width: 0; }
   .icon-arrow-left::before { content: "←"; }
   .icon-arrow-right::before { content: "→"; }
+
+  .item-meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem .75rem; }
+  .item-tag {
+    display: inline-block;
+    max-width: 100%;
+    padding: .125rem .5rem;
+    border: 1px solid var(--mf-border);
+    border-radius: 9999px;
+    font-size: .85em;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+  .item-tag, .tag-link { color: var(--theme-tag-color); cursor: pointer; }
+  .item-tag:hover, .tag-link:hover {
+    opacity: 1;
+    text-decoration: underline;
+    text-underline-offset: .16em;
+  }
+  .item-tag:focus-visible, .tag-link:focus-visible { outline-color: currentColor; }
+
+  .tags-directory { max-width: 70rem; margin-inline: auto; }
+  .tags-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
+    gap: 1rem;
+    margin-block: 1.5rem;
+  }
+  .tag-card {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--mf-border);
+    border-radius: .5rem;
+  }
+  .tag-card h2 { font-size: 1rem; font-weight: 600; line-height: 1.4; }
+  .tag-card p { margin: 0; color: var(--mf-muted); overflow-wrap: anywhere; }
+  .tag-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: .25rem .75rem;
+    margin-top: auto;
+    padding-top: .375rem;
+    color: var(--mf-muted);
+    font-size: .875rem;
+  }
 
   [data-image-preview] { cursor: zoom-in; }
   [data-image-preview]:hover { opacity: 1; }

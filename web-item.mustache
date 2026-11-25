@@ -8,8 +8,11 @@
 
   <section class="border-b">
     <h1 class="text-2xl text-black dark:text-gray-100 font-semibold">{{items.0.title}}</h1>
-    <div class="mb-4 text-sm mt-2 text-gray-500 dark:text-gray-400">
-      <time>{{items.0._microfeed.date_published_short}}</time>
+    <div class="item-meta mb-4 mt-2 text-sm">
+      <time class="text-gray-500 dark:text-gray-400">{{items.0._microfeed.date_published_short}}</time>
+      {{#items.0._microfeed.tags}}
+      <a class="item-tag" href="{{url}}" rel="tag">{{name}}</a>
+      {{/items.0._microfeed.tags}}
     </div>
   </section>
 
@@ -53,22 +56,6 @@
   <div>
     <h4 class="text-lg font-bold text-black dark:text-gray-100">Podcast API</h4>
     <p class="mt-1 text-gray-500 dark:text-gray-400">The Best Podcast API for Search, Directory, and Insights</p>
-  </div>
-</div>
-</a>
-          </li>
-
-          <li>
-          <a href="https://www.curatekit.com/" target="_blank">
-<div class="flex overflow-hidden bg-white dark:bg-gray-900 px-4 py-4 shadow sm:rounded-md sm:px-6">
-  <div class="mr-4 flex-shrink-0">
-    <img class="h-16 w-16 rounded-lg bg-white"  aria-hidden="true"
-         src="https://changelog-cdn.listennotes.com/changelog-listennotes-com/production/media/rich-editor/items/Ar_-xHVLBaq/image-b96ac05ccc6753befeda4dc3f5c9eb4d.png"
-    />
-  </div>
-  <div>
-    <h4 class="text-lg font-bold text-black dark:text-gray-100">CurateKit</h4>
-    <p class="mt-1 text-gray-500 dark:text-gray-400">The easiest way to curate and publish digital content</p>
   </div>
 </div>
 </a>
